@@ -14,6 +14,6 @@ touch r2_output.txt
 
 awk 'match ($0, /([a-zA-Z]+), ([a-zA-Z]+)/, groups) {print "1. " groups[1] "\n" "2. " groups[2] "\n"; }' < "$first_case" > r0_output.txt
 
-awk 'match($0, /([A-Z][a-zA-Z]+), ([a-z]+\.)/, words) {print "1. " words[1] "\n" "2. " words[2] "\n"}' < "$second_case" > r1_output.txt
+awk 'match($0, /([A-Z][a-zA-Z]+)\.\sMy\sfavorite\ssandwich\sis\s([a-z]+)/, groups) {print "1. " groups[1] "\n" "2. " groups[2] "\n"}' < "$second_case" > r1_output.txt
 
 awk 'match($0, /([a-zA-Z]+), ([a-zA-Z]+\.[a-zA-Z]\.[a-zA-Z])/, groups) {print "1. " groups[1] "\n" "2. " groups[2] "\n" }' < "$third_case" > r2_output.txt
